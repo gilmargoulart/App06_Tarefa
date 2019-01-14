@@ -1,12 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App06_Tarefa.Telas.Inicio">
+             x:Class="App06_Tarefa.Telas.Inicio"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout BackgroundColor="#2196F3" HeightRequest="250">
+                <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Meu Dia" TextColor="White" FontSize="24" />
+                <Label x:Name="txtDataHoje" HorizontalOptions="Start" VerticalOptions="End" Text="Sexta-feira, 11/01/2018" TextColor="White"/>
+            </StackLayout>
+            <StackLayout x:Name="slTarefas" Padding="10" Spacing="10">
+                <StackLayout Orientation="Horizontal" Spacing="15">
+                    <Image VerticalOptions="Center">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="CheckOff.png"/>
+                                <!-- Na plataforma Windows pode ser criado uma pasta para ficar melhor organizado as imagens -->
+                                <On Platform="UWP" Value="Resources/CheckOff.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label VerticalOptions="Center" Text="Task1" HorizontalOptions="FillAndExpand"/>
+                    <Image VerticalOptions="Center">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p4.png"/>
+                                <!-- Na plataforma Windows pode ser criado uma pasta para ficar melhor organizado as imagens -->
+                                <On Platform="UWP" Value="Resources/p4.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Image VerticalOptions="Center">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="Delete.png"/>
+                                <!-- Na plataforma Windows pode ser criado uma pasta para ficar melhor organizado as imagens -->
+                                <On Platform="UWP" Value="Resources/Delete.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="15">
+                    <Image VerticalOptions="Center">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="CheckOn.png"/>
+                                <!-- Na plataforma Windows pode ser criado uma pasta para ficar melhor organizado as imagens -->
+                                <On Platform="UWP" Value="Resources/CheckOn.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <StackLayout VerticalOptions="Center" Spacing="0" HorizontalOptions="FillAndExpand">
+                        <Label Text="Task1" TextColor="Gray"/>
+                        <Label Text="FInalizado em 11/01/2018 17:00" TextColor="Gray" FontSize="8"/>
+                    </StackLayout>
+                    <Image VerticalOptions="Center">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p3.png"/>
+                                <!-- Na plataforma Windows pode ser criado uma pasta para ficar melhor organizado as imagens -->
+                                <On Platform="UWP" Value="Resources/p3.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Image VerticalOptions="Center">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="Delete.png"/>
+                                <!-- Na plataforma Windows pode ser criado uma pasta para ficar melhor organizado as imagens -->
+                                <On Platform="UWP" Value="Resources/Delete.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+
+            <Button HorizontalOptions="Center" Clicked="GoCadastro" BackgroundColor="Transparent">
+                <Button.Image>
+                    <OnPlatform x:TypeArguments="FileImageSource">
+                        <On Platform="Android, iOS" Value="AddBotao.png"/>
+                        <!-- Na plataforma Windows pode ser criado uma pasta para ficar melhor organizado as imagens -->
+                        <On Platform="UWP" Value="Resources/AddBotao.png"/>
+                    </OnPlatform>
+                </Button.Image>
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
